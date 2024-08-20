@@ -18,7 +18,7 @@ rm -Force ~\AppData\Local\nvim
 git clone https://github.com/pamanzo/neovim
 ```
 
-# **Open neovim**
+## **Open neovim**
 ```
 nvim
 ```
