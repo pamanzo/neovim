@@ -4,12 +4,12 @@
 * Install from [nvchad](https://nvchad.com/docs/quickstart/install/) (have to delete the .git folder)
 
 ## **Delete the nvim directory**
-# Linux / Macos (unix)
 ```
+# Linux / Macos (unix)
 rm -rf ~/.config/nvim
 ```
-# Windows PowerShell
 ```
+# Windows PowerShell
 rm -Force ~\AppData\Local\nvim  
 ```
 
