@@ -1,7 +1,7 @@
 # **Basic neovim configuration**
 
 ## **Install nvchad**
--Install from [nvchad](https://nvchad.com/docs/quickstart/install/) (have to delete the .git folder)
+* Install from [nvchad](https://nvchad.com/docs/quickstart/install/) (have to delete the .git folder)
 
 ## **Delete the nvim directory**
 # Linux / Macos (unix)
@@ -19,4 +19,7 @@ git clone https://github.com/pamanzo/neovim
 ```
 
 # **Open neovim**
--Wait for lazy to finish installing
+```
+nvim
+```
+* Wait for lazy to finish installing
