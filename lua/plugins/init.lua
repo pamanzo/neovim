@@ -39,6 +39,9 @@ return {
                 "prettier",
                 "clangd",
                 "pyright",
+                "ts-standard",
+                "marksman",
+                "astro-language-server",
             },
         },
     },
@@ -79,9 +82,9 @@ return {
                 },
                 filetypes = {
                     yaml = false,
-                    markdown = false,
+                    markdown = true,
                     help = false,
-                    gitcommit = false,
+                    gitcommit = true,
                     gitrebase = false,
                     hgcommit = false,
                     svn = false,
@@ -93,13 +96,40 @@ return {
             }
         end,
     }, --
-    -- {
-    -- 	"nvim-treesitter/nvim-treesitter",
-    -- 	opts = {
-    -- 		ensure_installed = {
-    -- 			"vim", "lua", "vimdoc",
-    --      "html", "css"
-    -- 		},
-    -- 	},
-    -- },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = {
+            ensure_installed = {
+                "vim",
+                "lua",
+                "vimdoc",
+                "html",
+                "css",
+                "markdown",
+                "markdown_inline",
+            },
+        },
+    },
+    {
+        "AstroNvim/astrocore",
+        lazy = false, -- disable lazy loading
+        priority = 10000, -- load AstroCore first
+        opts = {
+            -- set configuration options  as described below
+        },
+    },
+    {
+        "AstroNvim/astroui",
+        lazy = false, -- disable lazy loading
+        priority = 10000, -- load AstroUI first
+        opts = {
+            -- set configuration options  as described below
+        },
+    },
+    {
+        "AstroNvim/astrolsp",
+        opts = {
+            -- set configuration options  as described below
+        },
+    },
 }
