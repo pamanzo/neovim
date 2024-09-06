@@ -5,6 +5,7 @@ return {
         config = function()
             require "configs.conform"
         end,
+        lazy = false,
     },
 
     {
@@ -112,7 +113,7 @@ return {
     },
     {
         "AstroNvim/astrocore",
-        lazy = false, -- disable lazy loading
+        lazy = true, -- disable lazy loading
         priority = 10000, -- load AstroCore first
         opts = {
             -- set configuration options  as described below
@@ -120,7 +121,7 @@ return {
     },
     {
         "AstroNvim/astroui",
-        lazy = false, -- disable lazy loading
+        lazy = true, -- disable lazy loading
         priority = 10000, -- load AstroUI first
         opts = {
             -- set configuration options  as described below
@@ -128,8 +129,22 @@ return {
     },
     {
         "AstroNvim/astrolsp",
+        lazy = true,
         opts = {
             -- set configuration options  as described below
         },
+    },
+    -- tailwind-tools.lua
+    {
+        "luckasRanarison/tailwind-tools.nvim",
+        name = "tailwind-tools",
+        build = ":UpdateRemotePlugins",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-telescope/telescope.nvim", -- optional
+            "neovim/nvim-lspconfig", -- optional
+        },
+        opts = {}, -- your configuration
+        lazy = true,
     },
 }
