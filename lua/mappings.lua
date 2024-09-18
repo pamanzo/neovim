@@ -36,3 +36,15 @@ map("v", "<leader>jk", "<esc>", { desc = "Exit visual mode" })
 map("n", "<leader><leader>s", "<cmd>HopChar1<CR>", { desc = "[]Easymotion xd" })
 
 map("n", "T", vim.lsp.buf.hover, { desc = "hover information" })
+
+--Telescope import
+map("n", "<leader>i", "<cmd>Telescope import<CR>", { desc = "Telescope import" })
+
+--Markdown preview
+map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Markdown preview" })
+
+-- Url open
+map("n", "<leader>ol", "<cmd>URLOpenUnderCursor<CR>", { desc = "Url open" })
+
+--renaming
+map("n", "<leader><leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })

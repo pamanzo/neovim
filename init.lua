@@ -26,6 +26,19 @@ require("lazy").setup({
     },
 
     { import = "plugins" },
+    {
+        "lewis6991/gitsigns.nvim",
+        event = "BufRead", -- O el evento que prefieras
+        config = function()
+            require("gitsigns").setup {
+                current_line_blame = true, -- Habilita el blame por línea
+                current_line_blame_opts = {
+                    delay = 1000, -- Tiempo de espera en milisegundos para mostrar el blame
+                    virt_text_pos = "eol", -- Muestra el blame al final de la línea
+                },
+            }
+        end,
+    },
 }, lazy_config)
 
 -- load theme

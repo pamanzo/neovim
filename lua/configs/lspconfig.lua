@@ -1,10 +1,14 @@
--- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = { "html", "cssls", "clangd" }
+
+-- Configurar log_level para todos los servidores
+lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+    log_level = vim.lsp.protocol.MessageType.Error, -- Solo mostrar errores críticos
+})
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -16,7 +20,7 @@ for _, lsp in ipairs(servers) do
 end
 
 --typescript
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
@@ -40,31 +44,7 @@ lspconfig.pyright.setup {
     capabilities = capabilities,
 }
 
--- emmet-ls
-lspconfig.emmet_ls.setup {
-    -- on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = {
-        "astro",
-        "css",
-        "eruby",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "less",
-        "sass",
-        "scss",
-        "svelte",
-        "pug",
-        "typescriptreact",
-        "vue",
-    },
-    init_options = {
-        html = {
-            options = {
-                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-                ["bem.enabled"] = true,
-            },
-        },
-    },
+--emmet
+lspconfig.emmet_language_server.setup {
+    filetypes = { "html", "css", "javascriptreact", "typescriptreact", "astro" },
 }
